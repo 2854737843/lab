@@ -3,6 +3,8 @@ import LoginView from '../views/LoginView.vue'
 import HomeView from '../views/HomeView.vue'
 import GroupsView from '../views/GroupsView.vue'
 import AuditView from '../views/AuditView.vue'
+import ProjectsTasksView from '../views/ProjectsTasksView.vue'
+import WeeklyReportsView from '../views/WeeklyReportsView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -10,6 +12,8 @@ const router = createRouter({
     { path: '/login', component: LoginView },
     { path: '/', component: HomeView },
     { path: '/groups', component: GroupsView },
+    { path: '/projects', component: ProjectsTasksView },
+    { path: '/weekly', component: WeeklyReportsView },
     { path: '/audit', component: AuditView }
   ]
 })

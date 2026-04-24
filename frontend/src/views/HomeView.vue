@@ -4,6 +4,8 @@
     <p>已登录用户：{{ username }}（{{ role }}）</p>
     <div style="display:flex; gap:8px; flex-wrap: wrap;">
       <button @click="go('/groups')">课题组管理</button>
+      <button @click="go('/projects')">项目/任务协作</button>
+      <button @click="go('/weekly')">周报</button>
       <button v-if="role !== 'STUDENT'" @click="go('/audit')">审计查询</button>
       <button @click="logout">退出登录</button>
     </div>
@@ -11,10 +13,6 @@
     <hr style="margin: 20px 0;" />
     <p>
       Swagger API 文档：<a :href="swaggerUrl" target="_blank">{{ swaggerUrl }}</a>
-    </p>
-
-    <p style="color:#666;">
-      任务协作 / 周报提交与审核将在下一步补齐。
     </p>
   </div>
 </template>
