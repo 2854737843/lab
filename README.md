@@ -1,48 +1,41 @@
-# 基于Spring Boot和Vue的课题组项目协同与周报管理系统
+# Lab Collaboration & Weekly Report Management System (Spring Boot + Vue)
 
-## 项目简介
+## Overview
+This repository contains a full-stack system for:
+- User authentication (JWT)
+- Multi-lab/group management
+- Project task collaboration
+- Weekly report submission & supervisor review
+- Audit & traceability
 
-一个帮助导师和学生协作的工具，功能包括：
-1. 用户登录认证。
-2. 多课题组管理。
-3. 项目任务协作。
-4. 周报提交与导师审核。
-5. 审计与可追溯。
+## Structure
+- `backend/` Spring Boot API
+- `frontend/` Vue 3 (Vite) web app
+- `docker-compose.yml` local dev stack
 
----
-
-### 技术栈
-- **后端**: Spring Boot, Spring Security, Spring Data JPA
-- **前端**: Vue.js 3, Vite
-- **数据库**: MySQL
-- **其他工具**: Docker, JWT
-
-### 快速启动
-
-确保你的电脑安装了 Git、Docker、Docker Compose。
-
-#### 克隆仓库
+## Quick Start (Docker)
 ```bash
-git clone https://github.com/2854737843/lab.git
-cd lab
+docker compose up --build
 ```
+- Frontend: http://localhost:5173
+- Backend:  http://localhost:8080
+- MySQL:    localhost:3306
 
-#### 配置环境变量
-在 `backend` 目录下创建 `.env` 文件，并填写以下内容：
-```env
-SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/lab_manage?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-SPRING_DATASOURCE_USERNAME=your_mysql_user
-SPRING_DATASOURCE_PASSWORD=your_mysql_password
-JWT_SECRET=your_jwt_secret
-```
+## Default Accounts (seed)
+- admin / admin123 (ADMIN)
+- mentor / mentor123 (MENTOR)
+- student / student123 (STUDENT)
 
-#### 启动项目
-使用 Docker Compose 一键启动整个项目。
+## Dev without Docker
+### Backend
 ```bash
-docker-compose up
+cd backend
+./mvnw spring-boot:run
 ```
----
 
-## 毕业论文
-项目根目录将提供一份毕业论文内容。
-
+### Frontend
+```bash
+cd frontend
+npm i
+npm run dev
+```

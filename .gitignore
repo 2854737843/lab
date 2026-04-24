@@ -6,8 +6,14 @@ dist/
 *.log
 target/
 
-# MacOS
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
 .DS_Store
 
-# Docker
+# Env
 *.env
+backend/src/main/resources/application-local.yml
